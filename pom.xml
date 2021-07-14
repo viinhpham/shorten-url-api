@@ -24,6 +24,16 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>1.5.9</version>
+            </dependency>
+            <dependency>
                 <groupId>org.vinh.shorten-url</groupId>
                 <artifactId>services</artifactId>
                 <version>1.0-SNAPSHOT</version>
