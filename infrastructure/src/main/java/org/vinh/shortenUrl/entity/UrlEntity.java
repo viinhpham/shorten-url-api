@@ -1,7 +1,6 @@
 package org.vinh.shortenUrl.entity;
 
 import lombok.Data;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.data.jpa.domain.AbstractAuditable;
 
 import javax.persistence.Entity;
@@ -12,5 +11,12 @@ import javax.persistence.Entity;
  * Time : 10:30 PM.
  */
 @Entity
+@Data
 public class UrlEntity extends AbstractAuditable<User, String> {
+	private String originUrl;
+
+	@Override
+	public void setId(String id) {
+		super.setId(id);
+	}
 }
