@@ -29,6 +29,6 @@ Request:
 
 Response:
 ![doc/navigate-response.png](doc/navigate-response.png)
-### Getting all url
+### Getting all urls
 
 ![doc/allurl.png](doc/allurl.png)

@@ -6,6 +6,7 @@ import org.vinh.shortenUrl.domain.service.UrlDomainService;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.stream.IntStream;
 
 /**
  * Author : Vinh Pham.
@@ -23,10 +24,8 @@ public class UrlDomainServiceImpl implements UrlDomainService {
 			StringBuilder encodedUrl = new StringBuilder();
 			URL url = new URL(urlRequest.getUrl());
 
-			for (int i = 0; i < 6; i++) {
-				encodedUrl.append(AlPHABET.charAt((int) (Math.random() * AlPHABET.length())));
-			}
-			
+			IntStream.range(0, 6).forEach((x) -> encodedUrl.append(AlPHABET.charAt((int) (Math.random() * AlPHABET.length()))));
+
 			 urlDomain = UrlDomain.builder()
 					.shortenedUrl(url.getProtocol() + "://" + url.getHost() + "/" + encodedUrl) // use constant instead
 					.originUrl(urlRequest.getUrl()).build();
