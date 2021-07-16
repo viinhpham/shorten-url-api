@@ -8,8 +8,10 @@ A shortened url rest api service bases on spring boot rest, spring data jpa, h2 
 4. > Navigate to [localhost:8080/api/swagger-ui.html](localhost:8080/api/swagger-ui/index.html)  to see swagger ui for testing
 5. > Navigate to [http://localhost:8080/api/h2-console/](http://localhost:8080/api/h2-console/)  to see  h2 db web console
    >> jdbc url: jdbc:h2:mem:tiny_url_db
-   > User name: sa
-   > Password: Let it blank and press `Connect`
+   > 
+   >> User name: sa
+   > 
+   >> Password: Let it blank and press `Connect`
 ## TO DO
 - Adding validation and error handling
 - Adding Caching
@@ -17,16 +19,16 @@ A shortened url rest api service bases on spring boot rest, spring data jpa, h2 
 ## Use cases
 ### Submitting a long url
 Request:
-![doc/img.png](response1.png)
+![doc/shorten-url-request.png](doc/shorten-url-request.png)
 Response
-![img.png](response1.png)
+![doc/shorten-url-response.png](doc/shorten-url-response.png)
 
-### Navigate to shortened url
+### Navigating to shortened url
 Request:
-![img.png](navigate-request.png)
+![doc/navigate-request.png](doc/navigate-request.png)
 
 Response:
-![img.png](navigate-response.png)
+![doc/navigate-response.png](doc/navigate-response.png)
 ### Getting all url
 
-![img.png](allurl.png)
+![doc/allurl.png](doc/allurl.png)
