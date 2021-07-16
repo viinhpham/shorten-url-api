@@ -4,7 +4,8 @@ import org.mapstruct.Mapper;
 import org.vinh.shortenUrl.domain.UrlDomain;
 import org.vinh.shortenUrl.entity.UrlEntity;
 
-import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Author : Vinh Pham.
@@ -14,12 +15,11 @@ import java.time.LocalDateTime;
 @Mapper(componentModel = "spring")
 public interface UrlConverter{
 
-	default UrlEntity toEntity(UrlDomain urlDomain) {
-		UrlEntity urlEntity = new UrlEntity();
-		urlEntity.setOriginUrl(urlDomain.getOriginUrl());
-		urlEntity.setCreatedDate(LocalDateTime.now());
-		urlEntity.setId(urlDomain.getShortenedUrl());
+	UrlEntity toEntity(UrlDomain urlDomain);
 
-		return urlEntity;
+	UrlDomain toDomain(UrlEntity urlEntity);
+
+	default List<UrlDomain> toDomains(List<UrlEntity> urlEntities) {
+		return urlEntities.stream().map(this::toDomain).collect(Collectors.toList());
 	}
 }
