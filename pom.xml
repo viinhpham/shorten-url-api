@@ -16,7 +16,8 @@
     <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
-    </properties>
+  <versions.java-security-toolkit>1.1.1</versions.java-security-toolkit>
+ </properties>
     <modules>
         <module>infrastructure</module>
         <module>services</module>
@@ -56,7 +57,12 @@
                 <version>5.7.2</version>
                 <scope>test</scope>
             </dependency>
-        </dependencies>
+   <dependency>
+    <groupId>io.github.pixee</groupId>
+    <artifactId>java-security-toolkit</artifactId>
+    <version>${versions.java-security-toolkit}</version>
+   </dependency>
+  </dependencies>
     </dependencyManagement>
     <build>
         <plugins>
