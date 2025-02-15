@@ -1,5 +1,7 @@
 package org.vinh.shortenUrl.domain.service.impl;
 
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 import org.vinh.shortenUrl.domain.UrlDomain;
 import org.vinh.shortenUrl.dto.UrlRequest;
 import org.vinh.shortenUrl.domain.service.UrlDomainService;
@@ -22,7 +24,7 @@ public class UrlDomainServiceImpl implements UrlDomainService {
 		UrlDomain urlDomain = null;
 		try {
 			StringBuilder encodedUrl = new StringBuilder();
-			URL url = new URL(urlRequest.getUrl());
+			URL url = Urls.create(urlRequest.getUrl(), Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
 
 			IntStream.range(0, 6).forEach((x) -> encodedUrl.append(AlPHABET.charAt((int) (Math.random() * AlPHABET.length()))));
 
